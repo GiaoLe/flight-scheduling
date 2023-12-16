@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="632.0" prefWidth="722.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flightscheduling.HelloController">
+   <ListView fx:id="flightListView" layoutX="29.0" layoutY="100.0" prefHeight="200.0" prefWidth="560.0" />
+   <TextField layoutX="140.0" layoutY="21.0" />
+   <Label layoutX="33.0" layoutY="25.0" text="Number of planes" />
+   <Label layoutX="29.0" layoutY="66.0" text="Flights" />
+   <Button layoutX="33.0" layoutY="327.0" mnemonicParsing="false" text="Add" />
+   <Button layoutX="81.0" layoutY="327.0" mnemonicParsing="false" text="Remove" />
+   <ListView layoutX="29.0" layoutY="399.0" prefHeight="200.0" prefWidth="571.0" />
+   <Label layoutX="33.0" layoutY="368.0" text="Flight paths" />
+</AnchorPane>
