@@ -4,6 +4,7 @@ package com.example.flightscheduling.demandGraph;
 
 import com.example.flightscheduling.flightGraph.Route;
 import com.example.flightscheduling.main.Utils;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,12 +13,14 @@ import java.util.List;
 
 public class DemandGraph {
 
+	@Getter
 	private HashMap<Vertex, List<Edge>> graph;
 	private int D;
+	@Getter
 	private boolean solvable;
 
 	public DemandGraph(HashMap<String, ArrayList<Route>> flightMap) {
-		graph = new HashMap<Vertex, List<Edge>>();
+		graph = new HashMap<>();
 		initializeAndRemoveLowerBounds(flightMap);
 		solvable = true;
 		addMasterVertexes();
@@ -26,13 +29,13 @@ public class DemandGraph {
 	private void initializeAndRemoveLowerBounds(
 			HashMap<String, ArrayList<Route>> flightMap) {
 		
-		HashMap<String, Integer> demandChange = new HashMap<String, Integer>();
+		HashMap<String, Integer> demandChange = new HashMap<>();
 
 		for (String key : flightMap.keySet()) {
 
 			ArrayList<Route> routes = flightMap.get(key);
 			Vertex v;
-			LinkedList<Edge> list = new LinkedList<Edge>();
+			LinkedList<Edge> list = new LinkedList<>();
 
 			if(key.equals("S")) {
 				v = new Vertex(key, -Utils.PLANES_AVAILABLE);
@@ -69,7 +72,7 @@ public class DemandGraph {
 			graph.put(v, list);
 		}
 
-		graph.put(new Vertex("T", Utils.PLANES_AVAILABLE), new LinkedList<Edge>());
+		graph.put(new Vertex("T", Utils.PLANES_AVAILABLE), new LinkedList<>());
 
 		for (Vertex v : graph.keySet()) {
 			String s = v.getId();
@@ -87,7 +90,7 @@ public class DemandGraph {
 		Vertex S_master = new Vertex("S*", -1);
 		Vertex T_master = new Vertex("T*", -1);
 		
-		List<Edge> s_list = new LinkedList<Edge>();
+		List<Edge> s_list = new LinkedList<>();
 
 		for (Vertex v : graph.keySet()) {
 			int d = v.getDemand();
@@ -105,7 +108,7 @@ public class DemandGraph {
 		}
 		
 		graph.put(S_master, s_list);
-		graph.put(T_master, new LinkedList<Edge>());
+		graph.put(T_master, new LinkedList<>());
 		
 		D = D_plus;
 
@@ -117,10 +120,6 @@ public class DemandGraph {
 		return D;
 	}
 
-	public boolean isSolvable() {
-		return solvable;
-	}
-	
 	public String source(){
 		return "S*";
 	}
@@ -129,7 +128,4 @@ public class DemandGraph {
 		return "T*";
 	}
 
-	public HashMap<Vertex, List<Edge>> getGraph() {
-		return graph;
-	}
 }

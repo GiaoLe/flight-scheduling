@@ -11,8 +11,8 @@
    <TextField fx:id="numberOfAvailablePlanes" layoutX="140.0" layoutY="21.0" />
    <Label layoutX="33.0" layoutY="25.0" text="Number of planes" />
    <Label layoutX="29.0" layoutY="66.0" text="Flights" />
-   <Button layoutX="33.0" layoutY="327.0" mnemonicParsing="false" text="Add" />
-   <Button layoutX="81.0" layoutY="327.0" mnemonicParsing="false" text="Remove" />
+   <Button layoutX="31.0" layoutY="300.0" mnemonicParsing="false" onAction="#addFlightButtonOnAction" prefHeight="25.0" prefWidth="59.0" text="Add" />
+   <Button layoutX="90.0" layoutY="300.0" mnemonicParsing="false" onAction="#removeFlightButtonOnAction" text="Remove" />
    <ListView fx:id="flightPathsListView" layoutX="29.0" layoutY="394.0" prefHeight="200.0" prefWidth="553.0" />
    <Label layoutX="29.0" layoutY="369.0" text="Flight paths" />
 </AnchorPane>

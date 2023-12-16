@@ -8,7 +8,6 @@ import javafx.scene.control.TextField;
 
 public class MainController {
     public ListView<Flight> flightListView;
-
     public ListView<FlightPath> flightPathsListView;
     public TextField numberOfAvailablePlanes;
 
@@ -20,6 +19,17 @@ public class MainController {
             flightPathsListView.getItems().addAll(mainModel.getFlightPaths());
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public void addFlightButtonOnAction() {
+        SceneManager.switchScene(Scene.FLIGHT_ADDITION);
+    }
+
+    public void removeFlightButtonOnAction() {
+        Flight selectedFlight = flightListView.getSelectionModel().getSelectedItem();
+        if (selectedFlight != null) {
+            flightListView.getItems().remove(selectedFlight);
         }
     }
 }
