@@ -23,8 +23,8 @@ public class Graph {
 		ArrayList<Route> sRoutes = new ArrayList<>();
 
 		for (Flight f : flights) {
-			String origKey = f.getOrigin() + "_" + f.getDepTime();
-			String destKey = f.getDest() + "_" + f.getArrTime();
+			String origKey = f.getOrigin() + "_" + f.getDepartureTime();
+			String destKey = f.getDestination() + "_" + f.getArrivalTime();
 			routes = new ArrayList<>();
 			
 			if (graph.containsKey(origKey)) {
@@ -54,13 +54,13 @@ public class Graph {
 			for (Flight fj : flights) {
 				if (fi != fj) {
 					if (fj.isSameAirportAndReachableBy(fi) || fj.isReachableBy(fi)) {
-						String key = fi.getDest() + "_" + fi.getArrTime();
+						String key = fi.getDestination() + "_" + fi.getArrivalTime();
 						routes = new ArrayList<>();
 						
 						if (graph.containsKey(key)) {
 							routes.addAll(graph.get(key));
 						}
-						routes.add(new Route(fj.getOrigin() + "_" + fj.getDepTime(), 0, 1));
+						routes.add(new Route(fj.getOrigin() + "_" + fj.getDepartureTime(), 0, 1));
 						graph.put(key, routes);
 					}
 				}

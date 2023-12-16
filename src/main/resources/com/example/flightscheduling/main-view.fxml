@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="631.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flightscheduling.MainController">
    <ListView fx:id="flightListView" layoutX="29.0" layoutY="100.0" prefHeight="200.0" prefWidth="553.0" />
-   <TextField layoutX="140.0" layoutY="21.0" />
+   <TextField fx:id="numberOfAvailablePlanes" layoutX="140.0" layoutY="21.0" />
    <Label layoutX="33.0" layoutY="25.0" text="Number of planes" />
    <Label layoutX="29.0" layoutY="66.0" text="Flights" />
    <Button layoutX="33.0" layoutY="327.0" mnemonicParsing="false" text="Add" />

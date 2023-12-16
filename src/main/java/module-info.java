@@ -7,4 +7,6 @@ module com.example.flightscheduling {
     opens com.example.flightscheduling to javafx.fxml;
     exports com.example.flightscheduling;
     exports com.example.flightscheduling.flightGraph;
+    exports com.example.flightscheduling.main;
+    exports com.example.flightscheduling.maxFlow;
 }

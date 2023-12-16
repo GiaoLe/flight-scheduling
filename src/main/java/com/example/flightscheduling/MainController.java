@@ -1,21 +1,23 @@
 package com.example.flightscheduling;
 
 import com.example.flightscheduling.flightGraph.Flight;
-import com.example.flightscheduling.main.Utils;
+import com.example.flightscheduling.main.FlightPath;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
 public class MainController {
     public ListView<Flight> flightListView;
 
-    private final MainModel model = new MainModel();
-    public ListView flightPathsListView;
+    public ListView<FlightPath> flightPathsListView;
+    public TextField numberOfAvailablePlanes;
 
     @FXML
     public void initialize() {
         try {
-            flightListView.getItems().addAll(model.getFlights());
-            flightPathsListView.getItems().addAll(model.getFlightPaths());
+            MainModel mainModel = new MainModel();
+            flightListView.getItems().addAll(mainModel.getFlights());
+            flightPathsListView.getItems().addAll(mainModel.getFlightPaths());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

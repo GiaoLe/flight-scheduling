@@ -7,8 +7,6 @@ import com.example.flightscheduling.maxFlow.FlowNetwork;
 import java.util.LinkedList;
 import java.util.List;
 
-//TODO create FlightPath class. This class will contains list of FlightPath objects
-
 public class Flights {
 
 	List<List<String>> flights = new LinkedList<>();
@@ -55,5 +53,16 @@ public class Flights {
 				System.out.print(id + " ");
 			System.out.println();
 		}
+	}
+
+	public List<FlightPath> getFlightPaths(){
+		List<FlightPath> flightPaths = new LinkedList<>();
+		for (List<String> path : flights){
+			FlightPath flightPath = new FlightPath();
+			for (String id : path)
+				flightPath.addAirport(id);
+			flightPaths.add(flightPath);
+		}
+		return flightPaths;
 	}
 }
