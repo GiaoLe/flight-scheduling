@@ -32,13 +32,8 @@ public class MainModel {
         processFlights(flights);
     }
 
-    public MainModel(ArrayList<Flight> flights) {
-        processFlights(flights);
-    }
-
     public void processFlights(ArrayList<Flight> flights) {
-        this.flights = flights;
-        saveFlights();
+        saveFlights(flights);
         Graph inputGraph = new Graph(flights);
         DemandGraph demandGraph = new DemandGraph(inputGraph.getGraph());
         if (!demandGraph.isSolvable()) {
@@ -52,6 +47,7 @@ public class MainModel {
         if (demandGraph.getTotalDemand() != fordFulkersonAlgorithm.maxFlow()) {
             solvable = false;
         } else {
+            System.out.println(fordFulkersonAlgorithm.maxFlow());
             solvable = true;
             flightSchedule = new FlightSchedule(flowNetwork);
         }
@@ -61,11 +57,8 @@ public class MainModel {
         return flightSchedule.getFlightPaths();
     }
 
-    public void addFlight(Flight flight) {
-        flights.add(flight);
-    }
-
-    public void saveFlights() {
+    public void saveFlights(ArrayList<Flight> flights) {
+        this.flights = flights;
         try {
             Utils.saveToFile(flights);
         } catch (Exception e) {
