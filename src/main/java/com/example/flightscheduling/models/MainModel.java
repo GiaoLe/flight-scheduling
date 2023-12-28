@@ -1,4 +1,4 @@
-package com.example.flightscheduling;
+package com.example.flightscheduling.models;
 
 import com.example.flightscheduling.demandGraph.DemandGraph;
 import com.example.flightscheduling.flightGraph.Flight;

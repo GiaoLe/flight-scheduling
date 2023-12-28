@@ -1,6 +1,8 @@
-package com.example.flightscheduling;
+package com.example.flightscheduling.ui;
 
+import com.example.flightscheduling.Main;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -11,6 +13,8 @@ public class SceneManager {
 
     public static void setStage(Stage stage) {
         SceneManager.stage = stage;
+        stage.setTitle("Flight Scheduling");
+        stage.getIcons().add(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("images/plane-icon.png"))));
     }
 
     public static void switchScene(Scene scene) {

@@ -4,12 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8edeac14-0611-44e0-8b8d-bd16c8cdbb3f" name="Changes" comment="Clean FordFulkersonAlgorithm.java">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/minimumcrew/BipartiteGraph.java" afterDir="false" />
+    <list default="true" id="8edeac14-0611-44e0-8b8d-bd16c8cdbb3f" name="Changes" comment="Add find minimum planes">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/images/plane-icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flights.txt" beforeDir="false" afterPath="$PROJECT_DIR$/flights.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/FlightAdditionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/controllers/FlightAdditionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/MainModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/MainModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/flightGraph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/flightGraph/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/MainModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/models/MainModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/ui/Scene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/ui/SceneManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/main/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/main/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/minimumcrew/BipartiteGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/minimumcrew/BipartiteGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/views/flight-addition-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/views/flight-addition-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/views/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/views/main-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +30,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="package.json" />
       </list>
     </option>
   </component>
@@ -43,24 +53,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/giaol/IdeaProjects/flight-scheduling/src/main/java/com/example/flightscheduling&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/giaol/IdeaProjects/flight-scheduling/src/main/java/com/example/flightscheduling&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_directory_selection": "C:/Users/giaol/IdeaProjects/flight-scheduling/src/main/java/com/example/flightscheduling",
+    "last_opened_file_path": "C:/Users/giaol/IdeaProjects/flight-scheduling/src/main/resources/com/example/flightscheduling/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\giaol\IdeaProjects\flight-scheduling\src\main\java\com\example\flightscheduling" />
@@ -76,7 +86,7 @@
       <module name="flight-scheduling" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.flightscheduling.*" />
+          <option name="PATTERN" value="com.example.flightscheduling.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,7 +117,8 @@
       <workItem from="1703733370205" duration="95000" />
       <workItem from="1703733631722" duration="1017000" />
       <workItem from="1703736794536" duration="805000" />
-      <workItem from="1703738624063" duration="1315000" />
+      <workItem from="1703738624063" duration="4553000" />
+      <workItem from="1703750809343" duration="2887000" />
     </task>
     <task id="LOCAL-00001" summary="FlightPath added">
       <option name="closed" value="true" />
@@ -141,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703738851242</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add find minimum planes">
+      <option name="closed" value="true" />
+      <created>1703740168928</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703740168928</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,7 +177,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dev/display-flight-paths" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -175,6 +194,7 @@
     <MESSAGE value="PrefixSelectionChoiceBox for FlightAdditionController.java" />
     <MESSAGE value="Save flights to file" />
     <MESSAGE value="Clean FordFulkersonAlgorithm.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean FordFulkersonAlgorithm.java" />
+    <MESSAGE value="Add find minimum planes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add find minimum planes" />
   </component>
 </project>

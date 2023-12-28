@@ -6,15 +6,16 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="631.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flightscheduling.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flightscheduling.controllers.MainController">
    <ListView fx:id="flightListView" layoutX="29.0" layoutY="100.0" prefHeight="200.0" prefWidth="553.0" />
    <TextField fx:id="numberOfAvailablePlanes" layoutX="140.0" layoutY="21.0" />
    <Label layoutX="33.0" layoutY="25.0" text="Number of planes" />
-   <Label layoutX="29.0" layoutY="66.0" text="Flights" />
+   <Label layoutX="31.0" layoutY="71.0" text="Flights" />
    <Button layoutX="31.0" layoutY="300.0" mnemonicParsing="false" onAction="#addFlightButtonOnAction" prefHeight="25.0" prefWidth="59.0" text="Add" />
    <Button layoutX="90.0" layoutY="300.0" mnemonicParsing="false" onAction="#removeFlightButtonOnAction" text="Remove" />
    <ListView fx:id="flightPathsListView" layoutX="29.0" layoutY="394.0" prefHeight="200.0" prefWidth="553.0" />
    <Label layoutX="29.0" layoutY="369.0" text="Flight paths" />
-   <Button fx:id="processButton" layoutX="29.0" layoutY="344.0" mnemonicParsing="false" onAction="#processButtonOnAction" text="Process" />
    <Label fx:id="morePlanesRequiredLabel" layoutX="29.0" layoutY="609.0" text="More planes are needed" />
+   <Label fx:id="minimumPlanesLabel" layoutX="306.0" layoutY="25.0" text="Minimum" />
+   <Button fx:id="changingNumberOfPlanesButton" layoutX="232.0" layoutY="46.0" mnemonicParsing="false" onAction="#changingNumberOfPlanesButtonOnAction" text="Change" />
 </AnchorPane>

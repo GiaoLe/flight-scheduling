@@ -1,4 +1,4 @@
-package com.example.flightscheduling;
+package com.example.flightscheduling.ui;
 
 public enum Scene {
 

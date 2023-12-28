@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import org.controlsfx.control.PrefixSelectionChoiceBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flightscheduling.FlightAdditionController">
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flightscheduling.controllers.FlightAdditionController">
    <VBox layoutX="27.0" layoutY="14.0" prefHeight="182.0" prefWidth="176.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <Label text="Origin" />
       <PrefixSelectionChoiceBox fx:id="originChoiceBox" prefHeight="25.0" prefWidth="231.0" />
