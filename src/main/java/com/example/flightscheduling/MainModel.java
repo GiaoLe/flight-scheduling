@@ -26,6 +26,15 @@ public class MainModel {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        processFlights(flights);
+    }
+
+    public MainModel(ArrayList<Flight> flights) {
+        this.flights = flights;
+        processFlights(flights);
+    }
+
+    public void processFlights(ArrayList<Flight> flights) {
         Graph inputGraph = new Graph(flights);
         DemandGraph demandGraph = new DemandGraph(inputGraph.getGraph());
         if (!demandGraph.isSolvable()) {
@@ -45,5 +54,9 @@ public class MainModel {
 
     public List<FlightPath> getFlightPaths() {
         return flightSchedule.getFlightPaths();
+    }
+
+    public void addFlight(Flight flight) {
+        flights.add(flight);
     }
 }

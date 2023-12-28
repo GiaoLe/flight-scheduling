@@ -8,25 +8,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import org.controlsfx.control.PrefixSelectionChoiceBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flightscheduling.FlightAdditionController">
-   <children>
-      <VBox layoutX="27.0" layoutY="14.0" prefHeight="182.0" prefWidth="176.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Label text="Origin" />
-            <PrefixSelectionChoiceBox fx:id="originChoiceBox" prefHeight="25.0" prefWidth="231.0" />
-            <Label text="Destination" />
-            <PrefixSelectionChoiceBox fx:id="destinationChoiceBox" prefHeight="25.0" prefWidth="184.0" />
-            <Label text="Departure time" />
-            <TextField />
-            <Label text="Arrival time" />
-            <TextField />
-            <HBox>
-               <children>
-                  <Button mnemonicParsing="false" onAction="#submitButtonOnAction" text="Submit" />
-                  <Button mnemonicParsing="false" onAction="#backButtonOnAction" text="Back" />
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </children>
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.flightscheduling.FlightAdditionController">
+   <VBox layoutX="27.0" layoutY="14.0" prefHeight="182.0" prefWidth="176.0" AnchorPane.bottomAnchor="0.0"
+         AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Label text="Origin"/>
+      <PrefixSelectionChoiceBox fx:id="originChoiceBox" prefHeight="25.0" prefWidth="231.0"/>
+      <Label text="Destination"/>
+      <PrefixSelectionChoiceBox fx:id="destinationChoiceBox" prefHeight="25.0" prefWidth="184.0"/>
+      <Label text="Departure time"/>
+      <TextField/>
+      <Label text="Arrival time"/>
+      <TextField/>
+      <HBox>
+         <Button mnemonicParsing="false" onAction="#submitButtonOnAction" text="Submit"/>
+         <Button mnemonicParsing="false" onAction="#backButtonOnAction" text="Back"/>
+      </HBox>
+   </VBox>
 </AnchorPane>
