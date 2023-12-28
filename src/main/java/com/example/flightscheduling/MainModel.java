@@ -16,7 +16,7 @@ import java.util.List;
 public class MainModel {
 
     @Getter
-    private final ArrayList<Flight> flights;
+    private ArrayList<Flight> flights;
 
     private FlightSchedule flightSchedule;
 
@@ -30,11 +30,12 @@ public class MainModel {
     }
 
     public MainModel(ArrayList<Flight> flights) {
-        this.flights = flights;
         processFlights(flights);
     }
 
     public void processFlights(ArrayList<Flight> flights) {
+        this.flights = flights;
+        saveFlights();
         Graph inputGraph = new Graph(flights);
         DemandGraph demandGraph = new DemandGraph(inputGraph.getGraph());
         if (!demandGraph.isSolvable()) {
@@ -58,5 +59,13 @@ public class MainModel {
 
     public void addFlight(Flight flight) {
         flights.add(flight);
+    }
+
+    public void saveFlights() {
+        try {
+            Utils.saveToFile(flights);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

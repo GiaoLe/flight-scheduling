@@ -52,7 +52,10 @@ public class Timestamp implements Comparable<Timestamp> {
 
 	@Override
 	public String toString() {
-		return String.format("%02d", hour) + ":"
-				+ String.format("%02d", minutes);
+		return String.format("%02d %02d", hour, minutes);
+	}
+
+	public int getMinute() {
+		return minutes;
 	}
 }

@@ -2,10 +2,7 @@ package com.example.flightscheduling.main;
 
 import com.example.flightscheduling.flightGraph.Flight;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -68,4 +65,12 @@ public class Utils {
         }
     }
 
+    public static void saveToFile(ArrayList<Flight> flights) throws Exception {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(Utils.FILENAME, false));
+        bufferedWriter.write(Utils.PLANES_AVAILABLE + "\n");
+        for (Flight flight : flights) {
+            bufferedWriter.write(flight.toString() + "\n");
+        }
+        bufferedWriter.close();
+    }
 }

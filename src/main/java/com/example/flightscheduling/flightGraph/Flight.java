@@ -28,11 +28,6 @@ public class Flight {
 
     @Override
     public String toString() {
-        return "Flight{" +
-                "origin='" + origin + '\'' +
-                ", dest='" + destination + '\'' +
-                ", depTime=" + departureTime +
-                ", arrTime=" + arrivalTime +
-                '}';
+        return origin + " " + departureTime + " " + destination + " " + arrivalTime;
     }
 }
