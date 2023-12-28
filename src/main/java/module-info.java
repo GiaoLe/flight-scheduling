@@ -2,6 +2,7 @@ module com.example.flightscheduling {
     requires javafx.controls;
     requires javafx.fxml;
     requires lombok;
+    requires org.controlsfx.controls;
 
 
     opens com.example.flightscheduling to javafx.fxml;

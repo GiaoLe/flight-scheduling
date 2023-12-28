@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8edeac14-0611-44e0-8b8d-bd16c8cdbb3f" name="Changes" comment="FlightPath added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/FlightAdditionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/Scene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/SceneManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/views/add-flight-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8edeac14-0611-44e0-8b8d-bd16c8cdbb3f" name="Changes" comment="Add view management">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/Airport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/FlightSchedulingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/FlightSchedulingApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/demandGraph/DemandGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/demandGraph/DemandGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/hello-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/views/main-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/FlightAdditionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/FlightAdditionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/FlightSchedulingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/SceneManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/views/add-flight-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/views/add-flight-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,35 +46,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev/display-flight-paths",
-    "last_directory_selection": "C:/Users/giaol/IdeaProjects/flight-scheduling/src/main/java/com/example/flightscheduling",
-    "last_opened_file_path": "C:/Users/giaol/IdeaProjects/flight-scheduling",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev/available-planes&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/giaol/IdeaProjects/flight-scheduling/src/main/java/com/example/flightscheduling&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/giaol/IdeaProjects/flight-scheduling/src/main/java/com/example/flightscheduling&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\giaol\IdeaProjects\flight-scheduling" />
       <recent name="C:\Users\giaol\IdeaProjects\flight-scheduling\src\main\java\com\example\flightscheduling" />
+      <recent name="C:\Users\giaol\IdeaProjects\flight-scheduling" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\giaol\IdeaProjects\flight-scheduling\src\main\resources\com\example\flightscheduling\views" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="FlightSchedulingApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.flightscheduling.FlightSchedulingApplication" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.flightscheduling.Main" />
       <module name="flight-scheduling" />
       <extension name="coverage">
         <pattern>
@@ -91,7 +88,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FlightSchedulingApplication" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -105,6 +102,8 @@
       <updated>1702708443236</updated>
       <workItem from="1702708444379" duration="4279000" />
       <workItem from="1702724360944" duration="1686000" />
+      <workItem from="1702815156434" duration="138000" />
+      <workItem from="1703729932120" duration="592000" />
     </task>
     <task id="LOCAL-00001" summary="FlightPath added">
       <option name="closed" value="true" />

@@ -15,7 +15,7 @@ public class SceneManager {
 
     public static void switchScene(Scene scene) {
         try {
-            stage.setScene(new javafx.scene.Scene(FXMLLoader.load(Objects.requireNonNull(FlightSchedulingApplication.class.getResource(scene.getFileLocationInResources())))));
+            stage.setScene(new javafx.scene.Scene(FXMLLoader.load(Objects.requireNonNull(Main.class.getResource(scene.getFileLocationInResources())))));
             stage.centerOnScreen();
             stage.show();
         } catch (IOException e) {
