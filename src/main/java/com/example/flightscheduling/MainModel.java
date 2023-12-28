@@ -47,7 +47,6 @@ public class MainModel {
         if (demandGraph.getTotalDemand() != fordFulkersonAlgorithm.maxFlow()) {
             solvable = false;
         } else {
-            System.out.println(fordFulkersonAlgorithm.maxFlow());
             solvable = true;
             flightSchedule = new FlightSchedule(flowNetwork);
         }

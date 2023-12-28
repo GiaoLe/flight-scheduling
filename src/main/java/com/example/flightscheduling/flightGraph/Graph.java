@@ -1,14 +1,16 @@
 package com.example.flightscheduling.flightGraph;
 
 import com.example.flightscheduling.main.Utils;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Graph {
 
-	private HashMap<String, ArrayList<Route>> graph;
-	private ArrayList<Flight> flights;
+	@Getter
+	private final HashMap<String, ArrayList<Route>> graph;
+	private final ArrayList<Flight> flights;
 	private ArrayList<Route> routes;
 
 	public Graph(ArrayList<Flight> flights) {
@@ -66,10 +68,6 @@ public class Graph {
 				}
 			}
 		}
-	}
-
-	public HashMap<String, ArrayList<Route>> getGraph() {
-		return graph;
 	}
 
 	@Override
