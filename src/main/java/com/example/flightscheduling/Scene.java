@@ -3,7 +3,7 @@ package com.example.flightscheduling;
 public enum Scene {
 
     MAIN("main-view.fxml"),
-    FLIGHT_ADDITION("add-flight-view.fxml");
+    FLIGHT_ADDITION("flight-addition-view.fxml");
     private static final String FXML_PATH = "views/";
     private final String fileName;
 

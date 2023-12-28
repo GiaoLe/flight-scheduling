@@ -16,6 +16,9 @@ import java.util.List;
 public class MainModel {
 
     @Getter
+    private boolean solvable;
+
+    @Getter
     private ArrayList<Flight> flights;
 
     private FlightSchedule flightSchedule;
@@ -47,8 +50,9 @@ public class MainModel {
 
         FordFulkersonAlgorithm fordFulkersonAlgorithm = new FordFulkersonAlgorithm(flowNetwork, demandGraph.source(), demandGraph.sink());
         if (demandGraph.getTotalDemand() != fordFulkersonAlgorithm.maxFlow()) {
-            System.out.println("More planes are needed");
+            solvable = false;
         } else {
+            solvable = true;
             flightSchedule = new FlightSchedule(flowNetwork);
         }
     }

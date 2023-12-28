@@ -73,4 +73,10 @@ public class Utils {
         }
         bufferedWriter.close();
     }
+
+    public static void appendToFile(Flight flight) throws Exception {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(Utils.FILENAME, true));
+        bufferedWriter.write(flight.toString() + "\n");
+        bufferedWriter.close();
+    }
 }

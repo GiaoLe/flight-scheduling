@@ -16,4 +16,5 @@
    <ListView fx:id="flightPathsListView" layoutX="29.0" layoutY="394.0" prefHeight="200.0" prefWidth="553.0" />
    <Label layoutX="29.0" layoutY="369.0" text="Flight paths" />
    <Button fx:id="processButton" layoutX="29.0" layoutY="344.0" mnemonicParsing="false" onAction="#processButtonOnAction" text="Process" />
+   <Label fx:id="morePlanesRequiredLabel" layoutX="29.0" layoutY="609.0" text="More planes are needed" />
 </AnchorPane>
