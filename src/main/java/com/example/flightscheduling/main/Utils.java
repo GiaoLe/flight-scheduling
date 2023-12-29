@@ -2,10 +2,11 @@ package com.example.flightscheduling.main;
 
 import com.example.flightscheduling.flightGraph.Flight;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Utils {
 
@@ -14,55 +15,19 @@ public class Utils {
 
     public static ArrayList<Flight> readFile() throws Exception {
         ArrayList<Flight> flights = new ArrayList<>();
-
-        Pattern intPattern = Pattern.compile("\\d+");
-        Pattern stringPattern = Pattern.compile("[a-zA-Z]+");
-        Matcher m;
-
-        String orig, dest;
-        int deH, deM, arH, arM;
-        BufferedReader in;
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(Utils.FILENAME));
+        Utils.PLANES_AVAILABLE = Integer.parseInt(bufferedReader.readLine());
         String line;
-        try {
-            in = new BufferedReader(new FileReader(Utils.FILENAME));
-
-            line = in.readLine();
-            m = intPattern.matcher(line);
-            m.find();
-            Utils.PLANES_AVAILABLE = Integer.parseInt(m.group());
-            while ((line = in.readLine()) != null) {
-                m = intPattern.matcher(line);
-                m.find();
-                deH = Integer.parseInt(m.group());
-                m.find();
-                deM = Integer.parseInt(m.group());
-                m.find();
-                arH = Integer.parseInt(m.group());
-                m.find();
-                arM = Integer.parseInt(m.group());
-
-                m = stringPattern.matcher(line);
-                m.find();
-                orig = m.group();
-                m.find();
-                dest = m.group();
-
-                flights.add(new Flight(orig, deH, deM, dest, arH, arM));
-            }
-            in.close();
-        } catch (FileNotFoundException e) {
-            throw new FileNotFoundException(Utils.FILENAME + " does not exist.");
-        } catch (IOException e) {
-            throw new IOException("File reading error: " + Utils.FILENAME);
-        } catch (IllegalStateException e) {
-            throw new IllegalStateException("File patter error");
+        while ((line = bufferedReader.readLine()) != null) {
+            String[] code = line.split(" ");
+            flights.add(new Flight(code[0],
+                    Integer.parseInt(code[1]),
+                    Integer.parseInt(code[2]),
+                    code[3],
+                    Integer.parseInt(code[4]),
+                    Integer.parseInt(code[5])));
         }
-
-        if (!flights.isEmpty()) {
-            return flights;
-        } else {
-            throw new NullPointerException("No flights given.");
-        }
+        return flights;
     }
 
     public static void saveToFile(ArrayList<Flight> flights) throws Exception {

@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8edeac14-0611-44e0-8b8d-bd16c8cdbb3f" name="Changes" comment="Add find minimum planes">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/images/plane-icon.png" afterDir="false" />
+    <list default="true" id="8edeac14-0611-44e0-8b8d-bd16c8cdbb3f" name="Changes" comment="Changes to stage title bar + make available planes count adjustable + removed process button in main view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flights.txt" beforeDir="false" afterPath="$PROJECT_DIR$/flights.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/FlightAdditionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/controllers/FlightAdditionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/MainModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/models/MainModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/ui/Scene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/ui/SceneManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/main/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/main/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/minimumcrew/BipartiteGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/minimumcrew/BipartiteGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/views/flight-addition-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/views/flight-addition-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/views/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/views/main-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,10 +26,13 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev/flight-input" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -59,7 +51,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "dev/read-file",
     "ignore.virus.scanning.warn.message": "true",
     "last_directory_selection": "C:/Users/giaol/IdeaProjects/flight-scheduling/src/main/java/com/example/flightscheduling",
     "last_opened_file_path": "C:/Users/giaol/IdeaProjects/flight-scheduling/src/main/resources/com/example/flightscheduling/images",
@@ -73,6 +65,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\giaol\IdeaProjects\flight-scheduling\src\main\resources\com\example\flightscheduling\images" />
       <recent name="C:\Users\giaol\IdeaProjects\flight-scheduling\src\main\java\com\example\flightscheduling" />
       <recent name="C:\Users\giaol\IdeaProjects\flight-scheduling" />
     </key>
@@ -118,7 +111,10 @@
       <workItem from="1703733631722" duration="1017000" />
       <workItem from="1703736794536" duration="805000" />
       <workItem from="1703738624063" duration="4553000" />
-      <workItem from="1703750809343" duration="2887000" />
+      <workItem from="1703750809343" duration="3097000" />
+      <workItem from="1703771177320" duration="7000" />
+      <workItem from="1703779548464" duration="618000" />
+      <workItem from="1703812747115" duration="1263000" />
     </task>
     <task id="LOCAL-00001" summary="FlightPath added">
       <option name="closed" value="true" />
@@ -160,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703740168928</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Changes to stage title bar + make available planes count adjustable + removed process button in main view">
+      <option name="closed" value="true" />
+      <created>1703753876475</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703753876475</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +199,7 @@
     <MESSAGE value="Save flights to file" />
     <MESSAGE value="Clean FordFulkersonAlgorithm.java" />
     <MESSAGE value="Add find minimum planes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add find minimum planes" />
+    <MESSAGE value="Changes to stage title bar + make available planes count adjustable + removed process button in main view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes to stage title bar + make available planes count adjustable + removed process button in main view" />
   </component>
 </project>
