@@ -8,7 +8,9 @@ import com.example.flightscheduling.main.FlightSchedule;
 import com.example.flightscheduling.main.Utils;
 import com.example.flightscheduling.maxFlow.FlowNetwork;
 import com.example.flightscheduling.maxFlow.FordFulkersonAlgorithm;
+import com.example.flightscheduling.maxFlow.PathFindingAlgorithm;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +21,7 @@ public class MainModel {
     private boolean solvable;
 
     @Getter
+    @Setter
     private ArrayList<Flight> flights;
 
     private FlightSchedule flightSchedule;
@@ -29,10 +32,18 @@ public class MainModel {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        processFlights(flights);
     }
 
-    public void processFlights(ArrayList<Flight> flights) {
+    public void processFlights() {
+        processFlights(PathFindingAlgorithm.EDMONDS_KARP);
+    }
+
+    public void processFlights(PathFindingAlgorithm algorithm, ArrayList<Flight> flights) {
+        this.flights = flights;
+        processFlights(algorithm);
+    }
+
+    public void processFlights(PathFindingAlgorithm algorithm) {
         saveFlights(flights);
         Graph inputGraph = new Graph(flights);
         DemandGraph demandGraph = new DemandGraph(inputGraph.getGraph());
@@ -43,7 +54,7 @@ public class MainModel {
 
         FlowNetwork flowNetwork = new FlowNetwork(demandGraph.getGraph());
 
-        FordFulkersonAlgorithm fordFulkersonAlgorithm = new FordFulkersonAlgorithm(flowNetwork, demandGraph.source(), demandGraph.sink());
+        FordFulkersonAlgorithm fordFulkersonAlgorithm = new FordFulkersonAlgorithm(flowNetwork, demandGraph.source(), demandGraph.sink(), algorithm);
         if (demandGraph.getTotalDemand() != fordFulkersonAlgorithm.maxFlow()) {
             solvable = false;
         } else {

@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8edeac14-0611-44e0-8b8d-bd16c8cdbb3f" name="Changes" comment="Changes to stage title bar + make available planes count adjustable + removed process button in main view">
+    <list default="true" id="8edeac14-0611-44e0-8b8d-bd16c8cdbb3f" name="Changes" comment="Allow more path finding algorithms">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/maxFlow/PathFindingAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flights.txt" beforeDir="false" afterPath="$PROJECT_DIR$/flights.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/maxFlow/FordFulkersonAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/maxFlow/FordFulkersonAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/minimumcrew/BipartiteGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/minimumcrew/MaximumBipartiteMatching.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/models/MainModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/models/MainModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/views/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/flightscheduling/views/main-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +24,7 @@
         <option value="FxmlFile" />
         <option value="Class" />
         <option value="package.json" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -168,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703753876475</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Clean code">
+      <option name="closed" value="true" />
+      <created>1703902754885</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703902754885</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +214,8 @@
     <MESSAGE value="Clean FordFulkersonAlgorithm.java" />
     <MESSAGE value="Add find minimum planes" />
     <MESSAGE value="Changes to stage title bar + make available planes count adjustable + removed process button in main view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes to stage title bar + make available planes count adjustable + removed process button in main view" />
+    <MESSAGE value="Clean code" />
+    <MESSAGE value="Allow more path finding algorithms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Allow more path finding algorithms" />
   </component>
 </project>
