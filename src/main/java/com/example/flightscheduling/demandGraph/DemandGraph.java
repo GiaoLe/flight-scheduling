@@ -26,8 +26,7 @@ public class DemandGraph {
 		addMasterVertexes();
 	}
 
-	private void initializeAndRemoveLowerBounds(
-			HashMap<String, ArrayList<Route>> flightMap) {
+	private void initializeAndRemoveLowerBounds(HashMap<String, ArrayList<Route>> flightMap) {
 		
 		HashMap<String, Integer> demandChange = new HashMap<>();
 

@@ -2,13 +2,15 @@ package com.example.flightscheduling.maxFlow;
 
 import com.example.flightscheduling.demandGraph.Edge;
 import com.example.flightscheduling.demandGraph.Vertex;
+import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
+@Getter
 public class FlowNetwork {
-	
+
 	private final HashMap<String, List<FlowEdge>> adjList;
 	
 	public FlowNetwork ( HashMap<Vertex, List<Edge>> graph){
