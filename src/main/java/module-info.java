@@ -16,4 +16,6 @@ module com.example.flightscheduling {
     opens com.example.flightscheduling.ui to javafx.fxml;
     exports com.example.flightscheduling.models;
     opens com.example.flightscheduling.models to javafx.fxml;
+    exports com.example.flightscheduling.demandGraph;
+    opens com.example.flightscheduling.demandGraph to javafx.fxml;
 }

@@ -7,7 +7,10 @@
     <list default="true" id="8edeac14-0611-44e0-8b8d-bd16c8cdbb3f" name="Changes" comment="Changes to stage title bar + make available planes count adjustable + removed process button in main view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flights.txt" beforeDir="false" afterPath="$PROJECT_DIR$/flights.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/main/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/main/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/maxFlow/FordFulkersonAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/maxFlow/FordFulkersonAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/minimumcrew/BipartiteGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/minimumcrew/MaximumBipartiteMatching.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +54,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev/read-file",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "last_directory_selection": "C:/Users/giaol/IdeaProjects/flight-scheduling/src/main/java/com/example/flightscheduling",
     "last_opened_file_path": "C:/Users/giaol/IdeaProjects/flight-scheduling/src/main/resources/com/example/flightscheduling/images",
@@ -89,6 +92,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
@@ -181,7 +185,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="dev/read-file" />
                       </list>
                     </value>
                   </entry>

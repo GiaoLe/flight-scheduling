@@ -3,7 +3,7 @@ package com.example.flightscheduling.controllers;
 import com.example.flightscheduling.flightGraph.Flight;
 import com.example.flightscheduling.main.FlightPath;
 import com.example.flightscheduling.main.Utils;
-import com.example.flightscheduling.minimumcrew.BipartiteGraph;
+import com.example.flightscheduling.minimumcrew.MaximumBipartiteMatching;
 import com.example.flightscheduling.models.MainModel;
 import com.example.flightscheduling.ui.Scene;
 import com.example.flightscheduling.ui.SceneManager;
@@ -44,7 +44,7 @@ public class MainController {
     }
 
     private void displayMinimumPlanesRequired() {
-        minimumPlanesLabel.setText("Minimum planes required: " + new BipartiteGraph(mainModel.getFlights()).getMinPlanes());
+        minimumPlanesLabel.setText("Minimum planes required: " + new MaximumBipartiteMatching(mainModel.getFlights()).getMinPlanes());
     }
 
     public void addFlightButtonOnAction() {
@@ -63,6 +63,7 @@ public class MainController {
         displayMinimumPlanesRequired();
         displayAvailablePlanesCount();
         mainModel.processFlights(new ArrayList<>(flightListView.getItems()));
+        flightPathsListView.getItems().clear();
         if (mainModel.isSolvable()) {
             morePlanesRequiredLabel.setVisible(false);
             flightPathsListView.getItems().setAll(mainModel.getFlightPaths());
