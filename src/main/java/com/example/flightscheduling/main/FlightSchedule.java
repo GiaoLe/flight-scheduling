@@ -10,8 +10,7 @@ public class FlightSchedule {
     private final List<FlightPath> flightPaths;
 
     public FlightSchedule(FlowNetwork flowNetwork) {
-        Flights flights = new Flights(flowNetwork);
-        flightPaths = flights.getFlightPaths();
+        flightPaths = new Flights(flowNetwork).getFlightPaths();
     }
 
 }

@@ -11,31 +11,31 @@ import java.util.List;
 @Getter
 public class FlowNetwork {
 
-	private final HashMap<String, List<FlowEdge>> adjList;
-	
-	public FlowNetwork ( HashMap<Vertex, List<Edge>> graph){
-		adjList = new HashMap<>();
-		for (Vertex v : graph.keySet()){
-			LinkedList<FlowEdge> list = new LinkedList<>();
-			adjList.put(v.getId(), list);
-		}
-		
-		for (Vertex v : graph.keySet()){
-			List<Edge> list = graph.get(v);
-			for (Edge e : list){
-				addEdge(new FlowEdge(v.getId(), e.getNext(), e.getCapacity()));
-			}
-		}
-	}
-	
-	public void addEdge(FlowEdge e){
-		String from = e.from();
-		String to = e.to();
-		adjList.get(from).add(e);
-		adjList.get(to).add(e);
-	}
-	
-	public Iterable<FlowEdge> adjacentList(String v){
-		return adjList.get(v);
-	}
+    private final HashMap<String, List<FlowEdge>> adjacentList;
+
+    public FlowNetwork(HashMap<Vertex, List<Edge>> graph) {
+        adjacentList = new HashMap<>();
+        for (Vertex v : graph.keySet()) {
+            LinkedList<FlowEdge> list = new LinkedList<>();
+            adjacentList.put(v.getId(), list);
+        }
+
+        for (Vertex v : graph.keySet()) {
+            List<Edge> list = graph.get(v);
+            for (Edge edge : list) {
+                addEdge(new FlowEdge(v.getId(), edge.getNext(), edge.getCapacity()));
+            }
+        }
+    }
+
+    public void addEdge(FlowEdge e) {
+        String from = e.from();
+        String to = e.to();
+        adjacentList.get(from).add(e);
+        adjacentList.get(to).add(e);
+    }
+
+    public List<FlowEdge> adjacentList(String v) {
+        return adjacentList.get(v);
+    }
 }

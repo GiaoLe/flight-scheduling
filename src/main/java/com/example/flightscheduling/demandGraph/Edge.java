@@ -21,8 +21,11 @@
 
 package com.example.flightscheduling.demandGraph;
 
+import lombok.Getter;
+
 public class Edge {
 
+	@Getter
 	private int capacity;
 	private final String nextVertex;
 
@@ -33,10 +36,6 @@ public class Edge {
 
 	public String getNext() {
 		return nextVertex;
-	}
-
-	public int getCapacity() {
-		return capacity;
 	}
 
 	public void decreaseCapacity(){

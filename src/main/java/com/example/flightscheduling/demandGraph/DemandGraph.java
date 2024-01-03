@@ -1,6 +1,4 @@
-
 package com.example.flightscheduling.demandGraph;
-
 
 import com.example.flightscheduling.flightGraph.Route;
 import com.example.flightscheduling.main.Utils;
@@ -43,12 +41,12 @@ public class DemandGraph {
 			}
 
 			for (Route route : routes) {
-				String dest = route.getDest();
-				Edge edge = new Edge(dest, route.getCapacity());
+				String dest = route.dest();
+				Edge edge = new Edge(dest, route.capacity());
 
 				list.add(edge);
 
-				if (route.getLowerBound() == 1) {
+				if (route.lowerBound() == 1) {
 
 					edge.decreaseCapacity();
 
@@ -111,8 +109,9 @@ public class DemandGraph {
 		
 		D = D_plus;
 
-		if (D_minus != D_plus)
-			solvable = false;
+		if (D_minus != D_plus) {
+            solvable = false;
+        }
 	}
 
 	public int getTotalDemand() {

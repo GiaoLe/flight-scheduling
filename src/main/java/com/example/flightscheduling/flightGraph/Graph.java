@@ -58,7 +58,6 @@ public class Graph {
 					if (fj.isSameAirportAndReachableBy(fi) || fj.isReachableBy(fi)) {
 						String key = fi.getDestination() + "_" + fi.getArrivalTime();
 						routes = new ArrayList<>();
-						
 						if (graph.containsKey(key)) {
 							routes.addAll(graph.get(key));
 						}

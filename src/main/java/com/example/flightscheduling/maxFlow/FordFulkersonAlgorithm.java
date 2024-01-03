@@ -97,7 +97,7 @@ public class FordFulkersonAlgorithm {
         int sourceIndex = 0;
         int sinkIndex = 0;
         int index = 0;
-        for (String vertex : network.getAdjList().keySet()) {
+        for (String vertex : network.getAdjacentList().keySet()) {
             vertexIndex.put(vertex, index);
             index++;
             if (vertex.equals(source)) {
@@ -108,10 +108,10 @@ public class FordFulkersonAlgorithm {
         }
 
         CapacityScalingExample.CapacityScalingSolver solver = new CapacityScalingExample.CapacityScalingSolver(
-                network.getAdjList().size(), sourceIndex, sinkIndex);
-        for (String vertex : network.getAdjList().keySet()) {
+                network.getAdjacentList().size(), sourceIndex, sinkIndex);
+        for (String vertex : network.getAdjacentList().keySet()) {
             for (FlowEdge edge : network.adjacentList(vertex)) {
-                solver.addEdge(vertexIndex.get(vertex), vertexIndex.get(edge.other(vertex)), edge.capacity());
+                solver.addEdge(vertexIndex.get(vertex), vertexIndex.get(edge.other(vertex)), edge.getCapacity());
             }
         }
 

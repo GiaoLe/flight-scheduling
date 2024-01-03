@@ -81,20 +81,11 @@ public class CapacityScalingExample {
             visited = new int[n];
         }
 
-        // Constructs an empty graph with n nodes including s and t.
-        @SuppressWarnings("unchecked")
         private void initializeEmptyFlowGraph() {
             graph = new List[n];
             for (int i = 0; i < n; i++) graph[i] = new ArrayList<>();
         }
 
-        /**
-         * Adds a directed edge (and its residual edge) to the flow graph.
-         *
-         * @param from - The index of the node the directed edge starts at.
-         * @param to - The index of the node the directed edge ends at.
-         * @param capacity - The capacity of the edge
-         */
         public void addEdge(int from, int to, long capacity) {
             if (capacity <= 0) throw new IllegalArgumentException("Forward edge capacity <= 0");
             Edge e1 = new Edge(from, to, capacity);
@@ -105,28 +96,20 @@ public class CapacityScalingExample {
             graph[to].add(e2);
         }
 
-        /**
-         * Returns the residual graph after the solver has been executed. This allows you to inspect the
-         * {@link Edge#flow} and {@link Edge#capacity} values of each edge. This is useful if you are
-         * debugging or want to figure out which edges were used during the max flow.
-         */
         public List<Edge>[] getGraph() {
             execute();
             return graph;
         }
 
-        // Returns the maximum flow from the source to the sink.
         public long getMaxFlow() {
             execute();
             return maxFlow;
         }
 
-        // Marks node 'i' as visited.
         public void visit(int i) {
             visited[i] = visitedToken;
         }
 
-        // Returns true/false depending on whether node 'i' has been visited or not.
         public boolean visited(int i) {
             return visited[i] == visitedToken;
         }
