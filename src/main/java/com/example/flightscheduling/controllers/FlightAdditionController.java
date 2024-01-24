@@ -1,6 +1,7 @@
 package com.example.flightscheduling.controllers;
 
 import com.example.flightscheduling.Airport;
+import com.example.flightscheduling.ui.PopUpWindowManager;
 import com.example.flightscheduling.ui.Scene;
 import com.example.flightscheduling.ui.SceneManager;
 import com.example.flightscheduling.flightGraph.Flight;
@@ -35,7 +36,7 @@ public class FlightAdditionController {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        SceneManager.switchScene(Scene.MAIN);
+        PopUpWindowManager.closeCurrentWindow();
     }
 
     public void backButtonOnAction() {

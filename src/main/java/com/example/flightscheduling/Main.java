@@ -9,7 +9,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         SceneManager.setStage(stage);
-        SceneManager.switchScene(Scene.MAIN);
+        SceneManager.switchScene(Scene.FLIGHT_MAP);
     }
 
     public static void main(String[] args) {

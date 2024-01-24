@@ -28,6 +28,13 @@ public class Flight {
 
     @Override
     public String toString() {
+        return "Origin: " + origin + "\n"
+                + "Destination: " + destination + "\n"
+                + "Departure Time: " + departureTime + "\n"
+                + "Arrival Time: " + arrivalTime + "\n";
+    }
+
+    public String toFileString() {
         return origin + " " + departureTime + " " + destination + " " + arrivalTime;
     }
 }

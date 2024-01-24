@@ -34,14 +34,14 @@ public class Utils {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(Utils.FILENAME, false));
         bufferedWriter.write(Utils.PLANES_AVAILABLE + "\n");
         for (Flight flight : flights) {
-            bufferedWriter.write(flight.toString() + "\n");
+            bufferedWriter.write(flight.toFileString() + "\n");
         }
         bufferedWriter.close();
     }
 
     public static void appendToFile(Flight flight) throws Exception {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(Utils.FILENAME, true));
-        bufferedWriter.write(flight.toString() + "\n");
+        bufferedWriter.write(flight.toFileString() + "\n");
         bufferedWriter.close();
     }
 }

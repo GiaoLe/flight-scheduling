@@ -9,6 +9,7 @@ import com.example.flightscheduling.main.Utils;
 import com.example.flightscheduling.maxFlow.FlowNetwork;
 import com.example.flightscheduling.maxFlow.FordFulkersonAlgorithm;
 import com.example.flightscheduling.maxFlow.PathFindingAlgorithm;
+import com.example.flightscheduling.minimumcrew.MaximumBipartiteMatching;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,27 +24,29 @@ public class MainModel {
     @Getter
     @Setter
     private ArrayList<Flight> flights;
-
     private FlightSchedule flightSchedule;
+    @Getter
+    private int minimumRequiredPlanes;
 
     public MainModel() {
         try {
             flights = Utils.readFile();
+            calculateMinimumRequiredPlanes();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void processFlights() {
-        processFlights(PathFindingAlgorithm.EDMONDS_KARP);
+    private void calculateMinimumRequiredPlanes() {
+        minimumRequiredPlanes = new MaximumBipartiteMatching(flights).getMinPlanes();
     }
 
-    public void processFlights(PathFindingAlgorithm algorithm, ArrayList<Flight> flights) {
+    public void processFlightsWithSpecifiedPathFindingAlgorithm(PathFindingAlgorithm algorithm, ArrayList<Flight> flights) {
         this.flights = flights;
-        processFlights(algorithm);
+        processFlightsWithSpecifiedPathFindingAlgorithm(algorithm);
     }
 
-    public void processFlights(PathFindingAlgorithm algorithm) {
+    public void processFlightsWithSpecifiedPathFindingAlgorithm(PathFindingAlgorithm algorithm) {
         saveFlights(flights);
         Graph inputGraph = new Graph(flights);
         DemandGraph demandGraph = new DemandGraph(inputGraph.getGraph());

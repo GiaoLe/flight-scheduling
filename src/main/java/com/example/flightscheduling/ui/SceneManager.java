@@ -11,6 +11,8 @@ import java.util.Objects;
 public class SceneManager {
     private static Stage stage;
 
+    private static Scene currentScene;
+
     public static void setStage(Stage stage) {
         SceneManager.stage = stage;
         stage.setTitle("Flight Scheduling");
@@ -19,11 +21,16 @@ public class SceneManager {
 
     public static void switchScene(Scene scene) {
         try {
+            currentScene = scene;
             stage.setScene(new javafx.scene.Scene(FXMLLoader.load(Objects.requireNonNull(Main.class.getResource(scene.getFileLocationInResources())))));
             stage.centerOnScreen();
             stage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void refreshView() {
+        switchScene(currentScene);
     }
 }

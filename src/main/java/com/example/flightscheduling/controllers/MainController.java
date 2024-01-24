@@ -31,7 +31,7 @@ public class MainController {
         morePlanesRequiredLabel.setVisible(false);
         try {
             mainModel = new MainModel();
-            mainModel.processFlights(pathFindingAlgorithmChoiceBox.getValue());
+            mainModel.processFlightsWithSpecifiedPathFindingAlgorithm(pathFindingAlgorithmChoiceBox.getValue());
             displayAvailablePlanesCount();
             flightListView.getItems().addAll(mainModel.getFlights());
             processFlightsData();
@@ -74,7 +74,7 @@ public class MainController {
     private void processFlightsData() {
         displayMinimumPlanesRequired();
         displayAvailablePlanesCount();
-        mainModel.processFlights(pathFindingAlgorithmChoiceBox.getValue(), new ArrayList<>(flightListView.getItems()));
+        mainModel.processFlightsWithSpecifiedPathFindingAlgorithm(pathFindingAlgorithmChoiceBox.getValue(), new ArrayList<>(flightListView.getItems()));
         flightPathsListView.getItems().clear();
         if (mainModel.isSolvable()) {
             morePlanesRequiredLabel.setVisible(false);

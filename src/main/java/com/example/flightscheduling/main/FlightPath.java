@@ -6,14 +6,12 @@ import java.util.List;
 public class FlightPath {
     List<String> airports = new ArrayList<>();
 
-    public void addAirport(String airport){
+    public void addAirport(String airport) {
         airports.add(airport);
     }
 
     @Override
     public String toString() {
-        return "FlightPath{" +
-                "airports=" + airports +
-                '}';
+        return "Flight path: " + airports;
     }
 }

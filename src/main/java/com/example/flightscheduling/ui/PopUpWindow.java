@@ -1,18 +1,19 @@
 package com.example.flightscheduling.ui;
 
-public enum Scene {
+public enum PopUpWindow {
 
-    MAIN("main-view.fxml"),
-    FLIGHT_MAP("flight-map-view.fxml"),
     FLIGHT_ADDITION("flight-addition-view.fxml");
+
     private static final String FXML_PATH = "views/";
+
     private final String fileName;
 
-    Scene(String fileName) {
+    PopUpWindow(String fileName) {
         this.fileName = fileName;
     }
 
-    public String getFileLocationInResources() {
+    public String getFileLocation() {
         return FXML_PATH + fileName;
     }
+
 }
