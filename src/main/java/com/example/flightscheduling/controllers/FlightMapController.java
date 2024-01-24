@@ -174,7 +174,7 @@ public class FlightMapController {
                     totalSeconds += (now - lastUpdate) / 1000000000.0;
                     lastUpdate = now;
                 }
-                if (totalMinutes == 1440) {
+                if (totalMinutes >= 1440) {
                     stop();
                 }
             }
