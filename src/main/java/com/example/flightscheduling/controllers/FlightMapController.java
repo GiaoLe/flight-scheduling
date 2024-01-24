@@ -1,5 +1,7 @@
 package com.example.flightscheduling.controllers;
 
+import com.example.flightscheduling.Airport;
+import com.example.flightscheduling.Main;
 import com.example.flightscheduling.flightGraph.Flight;
 import com.example.flightscheduling.main.FlightPath;
 import com.example.flightscheduling.main.Utils;
@@ -7,15 +9,24 @@ import com.example.flightscheduling.maxFlow.PathFindingAlgorithm;
 import com.example.flightscheduling.models.MainModel;
 import com.example.flightscheduling.ui.PopUpWindow;
 import com.example.flightscheduling.ui.PopUpWindowManager;
-import com.example.flightscheduling.ui.Scene;
-import com.example.flightscheduling.ui.SceneManager;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
+import javafx.util.Duration;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class FlightMapController {
     private final MainModel mainModel = new MainModel();
+    private final Image airplaneImage = new Image(
+            Objects.requireNonNull(Main.class.getResourceAsStream("images/airplane.png")));
     public ChoiceBox<PathFindingAlgorithm> pathFindingAlgorithmChoiceBox;
     public ListView<FlightPath> flightPathsListView;
     public ListView<Flight> flightListView;
@@ -26,9 +37,12 @@ public class FlightMapController {
     public Button stopButton;
     public Label numberOfPlanesLabel;
     public Label minPlanesLabel;
+    public Label mouseLabel;
+    public AnchorPane anchorPane;
 
     @FXML
     public void initialize() {
+        anchorPane.setOnMouseMoved(event -> mouseLabel.setText("X: " + event.getX() + " Y: " + event.getY()));
         initializeMinPlanesLabel();
         initializePathFindingAlgorithmChoiceBox();
         numberOfAvailablePlanes.setText(String.valueOf(Utils.PLANES_AVAILABLE));
@@ -40,7 +54,7 @@ public class FlightMapController {
         minPlanesLabel.setText("(Min: " + mainModel.getMinimumRequiredPlanes() + ")");
     }
 
-        private void initializePathFindingAlgorithmChoiceBox() {
+    private void initializePathFindingAlgorithmChoiceBox() {
         pathFindingAlgorithmChoiceBox.getItems().addAll(PathFindingAlgorithm.values());
         pathFindingAlgorithmChoiceBox.setValue(PathFindingAlgorithm.DFS);
     }
@@ -86,6 +100,41 @@ public class FlightMapController {
         if (mainModel.isSolvable()) {
             flightPathsListView.getItems().setAll(mainModel.getFlightPaths());
         }
+        startAnimation();
+    }
+
+    private void startAnimation() {
+        for (FlightPath flightPath : mainModel.getFlightPaths()) {
+            for (int i = 0; i < flightPath.getAirports().size() - 1; i++) {
+                Airport from = Airport.valueOf(flightPath.getAirports().get(i).substring(0, 3));
+                Airport to = Airport.valueOf(flightPath.getAirports().get(i + 1).substring(0, 3));
+                int departureHour = Integer.parseInt(flightPath.getAirports().get(i).substring(4, 6));
+                int departureMinute = Integer.parseInt(flightPath.getAirports().get(i).substring(7, 9));
+                int arrivalHour = Integer.parseInt(flightPath.getAirports().get(i + 1).substring(4, 6));
+                int arrivalMinute = Integer.parseInt(flightPath.getAirports().get(i + 1).substring(7, 9));
+                int departureTime = departureHour * 60 + departureMinute;
+                int arrivalTime = arrivalHour * 60 + arrivalMinute;
+                int duration = arrivalTime - departureTime;
+                Timeline timeline = new Timeline(
+                        new KeyFrame(Duration.seconds(departureTime * 0.01), event -> startFlight(from, to, duration)));
+                timeline.setCycleCount(1);
+                timeline.play();
+            }
+        }
+    }
+
+    private void startFlight(Airport from, Airport to, int duration) {
+        Circle circle = new Circle(10);
+        circle.setFill(new ImagePattern(airplaneImage));
+        anchorPane.getChildren().add(circle);
+        TranslateTransition transition = new TranslateTransition();
+        transition.setDuration(Duration.seconds(duration * 0.1));
+        transition.setNode(circle);
+        transition.setFromX(from.getPosition().getX());
+        transition.setFromY(from.getPosition().getY());
+        transition.setToX(to.getPosition().getX());
+        transition.setToY(to.getPosition().getY());
+        transition.play();
     }
 
     public void stopButtonOnAction() {

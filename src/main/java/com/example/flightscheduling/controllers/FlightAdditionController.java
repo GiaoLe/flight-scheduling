@@ -2,8 +2,6 @@ package com.example.flightscheduling.controllers;
 
 import com.example.flightscheduling.Airport;
 import com.example.flightscheduling.ui.PopUpWindowManager;
-import com.example.flightscheduling.ui.Scene;
-import com.example.flightscheduling.ui.SceneManager;
 import com.example.flightscheduling.flightGraph.Flight;
 import com.example.flightscheduling.main.Utils;
 import javafx.fxml.FXML;

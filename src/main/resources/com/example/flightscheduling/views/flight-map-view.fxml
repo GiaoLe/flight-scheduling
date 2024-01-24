@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flightscheduling.controllers.FlightMapController">
+<AnchorPane fx:id="anchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flightscheduling.controllers.FlightMapController">
    <HBox prefHeight="800.0" prefWidth="800.0">
       <ImageView fitHeight="800.0" fitWidth="400.0">
          <Image url="@../images/vietnam-airports-map.png" />
@@ -69,6 +69,7 @@
             <Button fx:id="stopButton" disable="true" mnemonicParsing="false" onAction="#stopButtonOnAction" text="Stop" textAlignment="CENTER" />
          </HBox>
          <Separator prefHeight="61.0" prefWidth="388.0" />
+         <Label fx:id="mouseLabel" text="Label" />
          <VBox>
             <Label text="Flight paths">
                <font>

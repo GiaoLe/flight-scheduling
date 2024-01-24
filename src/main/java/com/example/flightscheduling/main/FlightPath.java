@@ -1,8 +1,11 @@
 package com.example.flightscheduling.main;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public class FlightPath {
     List<String> airports = new ArrayList<>();
 
