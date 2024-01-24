@@ -4,27 +4,33 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.PrefixSelectionChoiceBox?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flightscheduling.controllers.FlightAdditionController">
-   <VBox layoutX="27.0" layoutY="14.0" prefHeight="182.0" prefWidth="176.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <Label text="Origin" />
-      <PrefixSelectionChoiceBox fx:id="originChoiceBox" prefHeight="25.0" prefWidth="231.0" />
-      <Label text="Destination" />
-      <PrefixSelectionChoiceBox fx:id="destinationChoiceBox" prefHeight="25.0" prefWidth="184.0" />
-      <Label text="Departure hour" />
-      <TextField fx:id="departureHourTextField" />
-      <Label text="Departure minute" />
-      <TextField fx:id="departureMinuteTextField" />
-      <Label layoutX="10.0" layoutY="94.0" text="Arrival hour" />
-      <TextField fx:id="arrivalHourTextField" layoutX="10.0" layoutY="111.0" />
-      <Label layoutX="10.0" layoutY="136.0" text="Arrival minute" />
-      <TextField fx:id="arrivalMinuteTextField" layoutX="10.0" layoutY="153.0" />
-      <HBox>
-         <Button mnemonicParsing="false" onAction="#submitButtonOnAction" text="Submit" />
-         <Button mnemonicParsing="false" onAction="#backButtonOnAction" text="Back" />
-      </HBox>
+   <VBox alignment="CENTER" layoutX="27.0" layoutY="14.0" prefHeight="182.0" prefWidth="176.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Label text="Add new flight">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <VBox>
+         <children>
+            <Label text="Origin" />
+            <PrefixSelectionChoiceBox fx:id="originChoiceBox" prefHeight="25.0" prefWidth="231.0" />
+            <Label text="Destination" />
+            <PrefixSelectionChoiceBox fx:id="destinationChoiceBox" prefHeight="25.0" prefWidth="184.0" />
+            <Label text="Departure hour" />
+            <TextField fx:id="departureHourTextField" />
+            <Label text="Departure minute" />
+            <TextField fx:id="departureMinuteTextField" />
+            <Label text="Arrival hour" />
+            <TextField fx:id="arrivalHourTextField" />
+            <Label text="Arrival minute" />
+            <TextField fx:id="arrivalMinuteTextField" />
+         </children>
+      </VBox>
+      <Button mnemonicParsing="false" onAction="#submitButtonOnAction" text="Submit" />
    </VBox>
 </AnchorPane>

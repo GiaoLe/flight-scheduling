@@ -47,6 +47,7 @@ public class FlightMapController {
 
     public void addFlightButtonOnAction() {
         PopUpWindowManager.openPopUpWindow(PopUpWindow.FLIGHT_ADDITION);
+        processChangedFlights();
     }
 
     public void removeFlightButtonOnAction() {
@@ -54,12 +55,17 @@ public class FlightMapController {
         if (selectedFlight != null) {
             flightListView.getItems().remove(selectedFlight);
         }
-        mainModel.setFlights(new ArrayList<>(flightListView.getItems()));
+        processChangedFlights();
         try {
             Utils.saveToFile(mainModel.getFlights());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private void processChangedFlights() {
+        mainModel.setFlights(new ArrayList<>(flightListView.getItems()));
+        initializeMinPlanesLabel();
     }
 
     public void changingNumberOfPlanesButtonOnAction() throws Exception {

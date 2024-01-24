@@ -11,7 +11,6 @@ import com.example.flightscheduling.maxFlow.FordFulkersonAlgorithm;
 import com.example.flightscheduling.maxFlow.PathFindingAlgorithm;
 import com.example.flightscheduling.minimumcrew.MaximumBipartiteMatching;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +21,6 @@ public class MainModel {
     private boolean solvable;
 
     @Getter
-    @Setter
     private ArrayList<Flight> flights;
     private FlightSchedule flightSchedule;
     @Getter
@@ -77,5 +75,10 @@ public class MainModel {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void setFlights(ArrayList<Flight> flights) {
+        this.flights = flights;
+        calculateMinimumRequiredPlanes();
     }
 }

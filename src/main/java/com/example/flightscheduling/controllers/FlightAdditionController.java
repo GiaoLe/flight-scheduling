@@ -38,8 +38,4 @@ public class FlightAdditionController {
         }
         PopUpWindowManager.closeCurrentWindow();
     }
-
-    public void backButtonOnAction() {
-        SceneManager.switchScene(Scene.MAIN);
-    }
 }
