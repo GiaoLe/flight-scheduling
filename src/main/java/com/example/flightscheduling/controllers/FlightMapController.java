@@ -42,9 +42,14 @@ public class FlightMapController {
     public Label mouseLabel;
     public AnchorPane anchorPane;
     public Label timeLabel;
-    private double clockRate = 0.02;
     public TextField clockRateTextField;
+    private double clockRate = 0.02;
     private AnimationTimer currentTimeInDayDisplay;
+
+    private final ArrayList<Timeline> animationTimelines = new ArrayList<>();
+
+    private final ArrayList<Circle> animationCircles = new ArrayList<>();
+    private final ArrayList<Line> animationLines = new ArrayList<>();
 
     @FXML
     public void initialize() {
@@ -141,6 +146,8 @@ public class FlightMapController {
                         new KeyFrame(Duration.seconds(departureTime * clockRate), event -> {
                             anchorPane.getChildren().add(circle);
                             anchorPane.getChildren().add(line);
+                            animationCircles.add(circle);
+                            animationLines.add(line);
                             TranslateTransition transition = new TranslateTransition();
                             transition.setDuration(Duration.seconds(duration * clockRate));
                             transition.setNode(circle);
@@ -156,6 +163,7 @@ public class FlightMapController {
                         }));
                 timeline.setCycleCount(1);
                 timeline.play();
+                animationTimelines.add(timeline);
             }
         }
     }
@@ -175,6 +183,7 @@ public class FlightMapController {
                     lastUpdate = now;
                 }
                 if (totalMinutes >= 1440) {
+                    timeLabel.setText("00:00");
                     stop();
                 }
             }
@@ -187,5 +196,17 @@ public class FlightMapController {
         startButton.setDisable(false);
         flightPathsListView.getItems().clear();
         currentTimeInDayDisplay.stop();
+        for (Timeline timeline : animationTimelines) {
+            timeline.stop();
+        }
+        animationTimelines.clear();
+        for (Circle circle : animationCircles) {
+            anchorPane.getChildren().remove(circle);
+        }
+        animationCircles.clear();
+        for (Line line : animationLines) {
+            anchorPane.getChildren().remove(line);
+        }
+        animationLines.clear();
     }
 }

@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8edeac14-0611-44e0-8b8d-bd16c8cdbb3f" name="Changes" comment="Add a clock to main view">
+    <list default="true" id="8edeac14-0611-44e0-8b8d-bd16c8cdbb3f" name="Changes" comment="Fix a bug that clock doesn't stop due to bad comparison with totalMinutes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/controllers/FlightMapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flightscheduling/controllers/FlightMapController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +152,7 @@
       <workItem from="1704271624202" duration="2035000" />
       <workItem from="1705997864007" duration="3451000" />
       <workItem from="1706114594758" duration="27000" />
-      <workItem from="1706114636606" duration="17154000" />
+      <workItem from="1706114636606" duration="18075000" />
     </task>
     <task id="LOCAL-00001" summary="FlightPath added">
       <option name="closed" value="true" />
@@ -265,7 +266,23 @@
       <option name="project" value="LOCAL" />
       <updated>1706133064051</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fix bug with clock">
+      <option name="closed" value="true" />
+      <created>1706134046736</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1706134046736</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fix a bug that clock doesn't stop due to bad comparison with totalMinutes">
+      <option name="closed" value="true" />
+      <created>1706134155942</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1706134155942</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,6 +326,8 @@
     <MESSAGE value="Create animation for flights" />
     <MESSAGE value="Add more airports. Removed unused scene" />
     <MESSAGE value="Add a clock to main view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a clock to main view" />
+    <MESSAGE value="Fix bug with clock" />
+    <MESSAGE value="Fix a bug that clock doesn't stop due to bad comparison with totalMinutes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix a bug that clock doesn't stop due to bad comparison with totalMinutes" />
   </component>
 </project>
