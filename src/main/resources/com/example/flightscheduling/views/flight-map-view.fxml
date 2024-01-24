@@ -64,13 +64,26 @@
             <ChoiceBox fx:id="pathFindingAlgorithmChoiceBox" prefHeight="25.0" prefWidth="179.0" />
          </VBox>
          <Region layoutX="10.0" layoutY="348.0" prefHeight="27.0" prefWidth="388.0" />
+         <HBox>
+            <Label text="Speed">
+               <font>
+                  <Font size="18.0"/>
+               </font>
+            </Label>
+            <Region prefHeight="27.0" prefWidth="8.0"/>
+            <TextField fx:id="clockRateTextField" prefHeight="25.0" prefWidth="131.0"/>
+         </HBox>
+         <Region prefHeight="15.0" prefWidth="388.0" />
          <HBox alignment="CENTER">
             <Button fx:id="startButton" mnemonicParsing="false" onAction="#startButtonOnAction" text="Start" textAlignment="CENTER" />
             <Button fx:id="stopButton" disable="true" mnemonicParsing="false" onAction="#stopButtonOnAction" text="Stop" textAlignment="CENTER" />
          </HBox>
          <Separator prefHeight="61.0" prefWidth="388.0" />
-         <Label fx:id="mouseLabel" text="Label" />
-         <Label fx:id="timeLabel" text="Label" />
+         <Label fx:id="mouseLabel" text="Label" visible="false" />
+         <Label fx:id="timeLabel" text="Time">
+            <font>
+               <Font size="18.0" />
+            </font></Label>
          <VBox>
             <Label text="Flight paths">
                <font>

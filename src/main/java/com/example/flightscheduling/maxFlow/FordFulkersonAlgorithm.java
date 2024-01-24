@@ -6,7 +6,6 @@ public class FordFulkersonAlgorithm {
     private final FlowNetwork network;
     private final String source;
     private final String sink;
-    private final PathFindingAlgorithm pathFindingAlgorithm;
     private int maxFlow;
     private HashMap<String, FlowEdge> edgeTo;
 
@@ -14,10 +13,9 @@ public class FordFulkersonAlgorithm {
         network = graph;
         this.source = source;
         this.sink = sink;
-        this.pathFindingAlgorithm = algorithm;
         maxFlow = 0;
 
-        switch (pathFindingAlgorithm) {
+        switch (algorithm) {
             case DFS -> runDFS();
             case EDMONDS_KARP -> runEdmondsKarp();
             case CAPACITY_SCALING -> runCapacityScaling();

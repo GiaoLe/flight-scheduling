@@ -9,6 +9,7 @@ import com.example.flightscheduling.maxFlow.PathFindingAlgorithm;
 import com.example.flightscheduling.models.MainModel;
 import com.example.flightscheduling.ui.PopUpWindow;
 import com.example.flightscheduling.ui.PopUpWindowManager;
+import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
@@ -40,13 +41,15 @@ public class FlightMapController {
     public Label minPlanesLabel;
     public Label mouseLabel;
     public AnchorPane anchorPane;
-
-    private final double clockRate = 0.02;
     public Label timeLabel;
+    private double clockRate = 0.02;
+    public TextField clockRateTextField;
+    private AnimationTimer currentTimeInDayDisplay;
 
     @FXML
     public void initialize() {
         anchorPane.setOnMouseMoved(event -> mouseLabel.setText("X: " + event.getX() + " Y: " + event.getY()));
+        clockRateTextField.setText(String.valueOf(1 / clockRate));
         initializeMinPlanesLabel();
         initializePathFindingAlgorithmChoiceBox();
         numberOfAvailablePlanes.setText(String.valueOf(Utils.PLANES_AVAILABLE));
@@ -86,19 +89,20 @@ public class FlightMapController {
         initializeMinPlanesLabel();
     }
 
-    public void changingNumberOfPlanesButtonOnAction() throws Exception {
+    public void changingNumberOfPlanesButtonOnAction() {
         if (Integer.parseInt(numberOfAvailablePlanes.getText()) < mainModel.getMinimumRequiredPlanes()) {
             numberOfPlanesErrorLabel.setVisible(true);
         } else {
             numberOfPlanesErrorLabel.setVisible(false);
-            Utils.PLANES_AVAILABLE = Integer.parseInt(numberOfAvailablePlanes.getText());
-            Utils.saveToFile(mainModel.getFlights());
+            saveFlightData();
         }
     }
 
     public void startButtonOnAction() {
+        clockRate = 1 / Double.parseDouble(clockRateTextField.getText());
         stopButton.setDisable(false);
         startButton.setDisable(true);
+        saveFlightData();
         mainModel.processFlightsWithSpecifiedPathFindingAlgorithm(pathFindingAlgorithmChoiceBox.getValue(),
                                                                   new ArrayList<>(flightListView.getItems()));
         if (mainModel.isSolvable()) {
@@ -107,7 +111,17 @@ public class FlightMapController {
         startAnimation();
     }
 
+    private void saveFlightData() {
+        Utils.PLANES_AVAILABLE = Integer.parseInt(numberOfAvailablePlanes.getText());
+        try {
+            Utils.saveToFile(mainModel.getFlights());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private void startAnimation() {
+        initializeAndStartAnimationTimer();
         for (FlightPath flightPath : mainModel.getFlightPaths()) {
             for (int i = 0; i < flightPath.getAirports().size() - 1; i++) {
                 Airport from = Airport.valueOf(flightPath.getAirports().get(i).substring(0, 3));
@@ -146,11 +160,32 @@ public class FlightMapController {
         }
     }
 
+    private void initializeAndStartAnimationTimer() {
+        currentTimeInDayDisplay = new AnimationTimer() {
+            private long lastUpdate = System.nanoTime();
+            private double totalSeconds = 0;
+            private long totalMinutes;
+
+            @Override
+            public void handle(long now) {
+                if (now - lastUpdate >= 10000000) {
+                    totalMinutes = (long) (totalSeconds / clockRate);
+                    timeLabel.setText(totalMinutes / 60 + ":" + totalMinutes % 60);
+                    totalSeconds += (now - lastUpdate) / 1000000000.0;
+                    lastUpdate = now;
+                }
+                if (totalMinutes == 1440) {
+                    stop();
+                }
+            }
+        };
+        currentTimeInDayDisplay.start();
+    }
+
     public void stopButtonOnAction() {
         stopButton.setDisable(true);
         startButton.setDisable(false);
         flightPathsListView.getItems().clear();
-        //TODO: Stop the air traffic animation
-
+        currentTimeInDayDisplay.stop();
     }
 }
