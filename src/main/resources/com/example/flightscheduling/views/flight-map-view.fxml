@@ -70,6 +70,7 @@
          </HBox>
          <Separator prefHeight="61.0" prefWidth="388.0" />
          <Label fx:id="mouseLabel" text="Label" />
+         <Label fx:id="timeLabel" text="Label" />
          <VBox>
             <Label text="Flight paths">
                <font>

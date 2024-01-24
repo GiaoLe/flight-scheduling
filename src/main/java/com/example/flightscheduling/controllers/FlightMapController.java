@@ -18,6 +18,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
@@ -39,6 +40,9 @@ public class FlightMapController {
     public Label minPlanesLabel;
     public Label mouseLabel;
     public AnchorPane anchorPane;
+
+    private final double clockRate = 0.02;
+    public Label timeLabel;
 
     @FXML
     public void initialize() {
@@ -115,26 +119,31 @@ public class FlightMapController {
                 int departureTime = departureHour * 60 + departureMinute;
                 int arrivalTime = arrivalHour * 60 + arrivalMinute;
                 int duration = arrivalTime - departureTime;
+                Line line = new Line(from.getPosition().getX(), from.getPosition().getY(), to.getPosition().getX(),
+                                     to.getPosition().getY());
+                Circle circle = new Circle(10);
+                circle.setFill(new ImagePattern(airplaneImage));
                 Timeline timeline = new Timeline(
-                        new KeyFrame(Duration.seconds(departureTime * 0.01), event -> startFlight(from, to, duration)));
+                        new KeyFrame(Duration.seconds(departureTime * clockRate), event -> {
+                            anchorPane.getChildren().add(circle);
+                            anchorPane.getChildren().add(line);
+                            TranslateTransition transition = new TranslateTransition();
+                            transition.setDuration(Duration.seconds(duration * clockRate));
+                            transition.setNode(circle);
+                            transition.setFromX(from.getPosition().getX());
+                            transition.setFromY(from.getPosition().getY());
+                            transition.setToX(to.getPosition().getX());
+                            transition.setToY(to.getPosition().getY());
+                            transition.play();
+                        }),
+                        new KeyFrame(Duration.seconds(arrivalTime * clockRate), event -> {
+                            anchorPane.getChildren().remove(circle);
+                            anchorPane.getChildren().remove(line);
+                        }));
                 timeline.setCycleCount(1);
                 timeline.play();
             }
         }
-    }
-
-    private void startFlight(Airport from, Airport to, int duration) {
-        Circle circle = new Circle(10);
-        circle.setFill(new ImagePattern(airplaneImage));
-        anchorPane.getChildren().add(circle);
-        TranslateTransition transition = new TranslateTransition();
-        transition.setDuration(Duration.seconds(duration * 0.1));
-        transition.setNode(circle);
-        transition.setFromX(from.getPosition().getX());
-        transition.setFromY(from.getPosition().getY());
-        transition.setToX(to.getPosition().getX());
-        transition.setToY(to.getPosition().getY());
-        transition.play();
     }
 
     public void stopButtonOnAction() {
@@ -142,5 +151,6 @@ public class FlightMapController {
         startButton.setDisable(false);
         flightPathsListView.getItems().clear();
         //TODO: Stop the air traffic animation
+
     }
 }

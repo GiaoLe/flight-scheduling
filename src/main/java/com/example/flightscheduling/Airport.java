@@ -8,11 +8,11 @@ public enum Airport {
 //    UIH("UIH", "Phù Cát", "Bình Định"),
 //    CAH("CAH", "Cà Mau", "Cà Mau"),
 //    VCA("VCA", "Cần Thơ", "Cần Thơ"),
-//    BMV("BMV", "Buôn Ma Thuột", "Đắk Lắk"),
     DAD("DAD", "Đà Nẵng", "Đà Nẵng", new Point2D(320, 400)),
+    BMV("BMV", "Buôn Ma Thuột", "Đắk Lắk", new Point2D(317, 570)),
 //    DIN("DIN", "Điện Biên Phủ", "Điện Biên"),
 //    PXU("PXU", "Pleiku", "Gia Lai"),
-//    HPH("HPH", "Cát Bi", "Hải Phòng"),
+    HPH("HPH", "Cát Bi", "Hải Phòng", new Point2D(245, 160)),
     HAN("HAN", "Nội Bài", "Hà Nội", new Point2D(200, 150)),
     SGN("SGN", "Tân Sơn Nhất", "Hồ Chí Minh", new Point2D(240, 670));
     @Getter
